@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0d47a1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="DMV Briheche">
+<meta name="robots" content="noindex, nofollow">
+<title>ECC Équin — DMV Briheche</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icons/icon-180.png">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="stylesheet" href="app.css">
+<style>
+body.locked{overflow:hidden} body.locked .top, body.locked main, body.locked .tabs{visibility:hidden}
+#gate{position:fixed;inset:0;z-index:1000;display:flex;align-items:center;justify-content:center;padding:24px;background:linear-gradient(140deg,#0b3d91 0%,#1565c0 55%,#42a5f5 100%)}
+#gate form{width:100%;max-width:360px;text-align:center;color:#fff}
+.gate-shoe{width:84px;height:84px;margin-bottom:10px;opacity:.95}
+.gate-k{font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;opacity:.9}
+#gate h1{margin:4px 0 6px;font-size:30px}
+#gate p{margin:0 0 22px;opacity:.9;font-size:15px}
+#gate-pw{width:100%;border:0;border-radius:14px;padding:15px 16px;font-size:18px;text-align:center;letter-spacing:2px;color:#0f2742;background:#fff;box-shadow:0 6px 20px rgba(0,0,0,.18)}
+.gate-rem{display:flex;gap:8px;align-items:center;justify-content:center;margin:14px 0;font-size:14px;opacity:.95}
+.gate-rem input{width:18px;height:18px;accent-color:#fff}
+#gate-btn{width:100%;border:0;border-radius:14px;padding:14px;font-size:17px;font-weight:700;background:#0b3d91;color:#fff;box-shadow:0 6px 20px rgba(0,0,0,.2);cursor:pointer}
+#gate-btn:disabled{opacity:.6}
+#gate-msg{min-height:22px;margin-top:14px;font-size:14.5px;font-weight:600}
+#gate-msg.err{color:#ffe0e0;background:rgba(198,40,40,.35);border-radius:10px;padding:8px}
+</style>
+
+</head>
+<body class="locked">
+<header class="top"><button class="back" id="back" aria-label="Retour">‹</button><h1 id="ttl">ECC Équin · DMV Briheche</h1></header>
+<main id="main"><div class="card">Chargement…</div></main>
+<nav class="tabs" id="tabs"></nav>
+<div class="lb" id="lb"><div class="lbtop"><span id="lbn"></span><div class="row"><button id="lbp" aria-label="Précédente">‹</button><button id="lbx2" aria-label="Suivante">›</button><button id="lbx" aria-label="Fermer">✕</button></div></div><div class="lbimg"><img id="lbi" alt=""></div><div class="lbcap" id="lbc"></div></div>
+<div class="toast" id="toast"></div>
+<div id="gate"><form id="gate-form" autocomplete="off">
+  <svg class="gate-shoe" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"><path d="M6 21V11a6 6 0 0 1 12 0v10"/><path d="M6 15h2M16 15h2M6 19h2M16 19h2"/></svg>
+  <div class="gate-k">DMV Briheche</div><h1>ECC Équin</h1><p>Accès réservé. Entrez le mot de passe.</p>
+  <input id="gate-pw" type="password" inputmode="text" autocapitalize="characters" autocorrect="off" spellcheck="false" placeholder="Mot de passe" aria-label="Mot de passe">
+  <label class="gate-rem"><input id="gate-rem" type="checkbox"> Rester connectée sur cet appareil</label>
+  <button id="gate-btn" type="submit">Entrer</button><div id="gate-msg"></div></form></div>
+<script src="boot.js"></script>
+</body>
+</html>
